@@ -1,18 +1,33 @@
 /*
 * 불필요한 객체 생성을 피하라*/
 
+import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class Item06 {
     public static void main(String[] args) {
-        String s = new String("abc"); // 완전 구림!
+//        String s = new String("abc"); // 완전 구림!
+//
+//        String s1 = "abc"; // 재사용될 수 있는 객체는 재사용 해라.
+//
+//        // 둘 중 아래의 방법이 훨씬 빠르고 코드의 명확성도 높다.
+//        boolean b = isRomanNumeral("abc");
+//        RomanNumerals.isRomanNumeral("abc");
 
-        String s1 = "abc"; // 재사용될 수 있는 객체는 재사용 해라.
+        System.out.println(sum());
 
-        // 둘 중 아래의 방법이 훨씬 빠르고 코드의 명확성도 높다.
-        boolean b = isRomanNumeral("abc");
-        RomanNumerals.isRomanNumeral("abc");
 
+    }
+
+
+    // 박싱된 기본 타입보다는 기본 타입을 사용하고, 의도치 않은 오토박싱이 숨어들지 않도록 주의해라.
+    private static long sum() {
+//        Long sum = 0L;
+        long sum = 0L;
+        for (long i = 0; i <= Integer.MAX_VALUE; i++){
+            sum += i;
+        }
+        return sum;
     }
 
     /*이 방식의 문제는 String.matches 메서드를 사용한다는 것.
