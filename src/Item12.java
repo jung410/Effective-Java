@@ -1,8 +1,20 @@
+import java.util.Arrays;
+
 /*
 * 12. toString을 항상 재정의해라.
 * !! 모든 하위 클래스에서 이 메서드를 재정의해라 !!
 * - 그 객체가 가진 주요 정보 모두를 반환하는게 좋다.*/
 public class Item12 {
+    public static void main(String[] args) {
+        PhoneNumber phoneNumber = new PhoneNumber((short)123, (short)456, (short)12);
+        PhoneNumber2 phoneNumber2 = new PhoneNumber2((short)123, (short)456, (short)12);
+        System.out.println("phoneNumber = " + phoneNumber);
+        System.out.println("phoneNumber2 = " + phoneNumber2);
+        // return값
+        /*
+        * phoneNumber = PhoneNumber@3d24753a
+          phoneNumber2 = 123-456-0012*/
+    }
 }
 
 class PhoneNumber2{
